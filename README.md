@@ -50,4 +50,3 @@ The player competes against the computer, which makes a random choice each round
 
 ---
 
-Would you like me to make it **loop automatically** so you can play multiple rounds without restarting the program?

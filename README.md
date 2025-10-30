@@ -15,46 +15,6 @@ The player competes against the computer, which makes a random choice each round
 
 ---
 
-### 💻 Code Example
-
-```cpp
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-using namespace std;
-
-int main() {
-    srand(time(NULL));
-    int user = 0;
-    int computer = 0;
-    cout << "Stone Paper Scissor Game" << endl;
-    cout << "1) Rock\n2) Paper\n3) Scissor" << endl;
-    cin >> user;
-
-    if(user == 1) cout << "You choose Rock" << endl;
-    else if(user == 2) cout << "You choose Paper" << endl;
-    else cout << "You choose Scissor" << endl;
-
-    computer = rand() % 3 + 1;
-
-    if(computer == 1) cout << "Computer chooses Rock" << endl;
-    else if(computer == 2) cout << "Computer chooses Paper" << endl;
-    else cout << "Computer chooses Scissor" << endl;
-
-    if(user == computer) cout << "Match Tie" << endl;
-    else if((user == 1 && computer == 3) || 
-            (user == 2 && computer == 1) || 
-            (user == 3 && computer == 2))
-        cout << "You win!" << endl;
-    else
-        cout << "You lose!" << endl;
-
-    return 0;
-}
-```
-
----
-
 ### 🧩 How It Works
 
 1. The program displays 3 choices:

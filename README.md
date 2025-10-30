@@ -1,4 +1,4 @@
-## 🪨📄✂️ Stone Paper Scissor Game (C++)
+## 🗿📄✂️ Stone Paper Scissor Game (C++)
 
 This is a simple console-based **Stone Paper Scissor** game written in C++.
 The player competes against the computer, which makes a random choice each round.

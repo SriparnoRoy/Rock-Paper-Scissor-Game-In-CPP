@@ -1,75 +1,93 @@
-# Stone Paper Scissor Game - README
+## 🪨📄✂️ Stone Paper Scissor Game (C++)
 
-## Overview
-This is a simple **Stone, Paper, Scissor** game written in C++. It allows a user to play against the computer. The game randomly generates the computer's choice and compares it with the user’s choice to determine the winner. The game follows the basic rules of Stone, Paper, Scissor:
+This is a simple console-based **Stone Paper Scissor** game written in C++.
+The player competes against the computer, which makes a random choice each round.
 
-- Rock beats Scissors
-- Scissors beat Paper
-- Paper beats Rock
+---
 
-## Prerequisites
-- A C++ compiler (like g++, Visual Studio, etc.)
-- Basic knowledge of compiling and running C++ programs
+### 🎯 Features
 
-## How to Compile and Run
+* Simple and beginner-friendly C++ program
+* Uses `rand()` and `srand()` for random computer moves
+* Interactive console input/output
+* Displays both player and computer choices
+* Determines win, lose, or tie
 
-1. **Compile the code:**
+---
+
+### 💻 Code Example
+
+```cpp
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(NULL));
+    int user = 0;
+    int computer = 0;
+    cout << "Stone Paper Scissor Game" << endl;
+    cout << "1) Rock\n2) Paper\n3) Scissor" << endl;
+    cin >> user;
+
+    if(user == 1) cout << "You choose Rock" << endl;
+    else if(user == 2) cout << "You choose Paper" << endl;
+    else cout << "You choose Scissor" << endl;
+
+    computer = rand() % 3 + 1;
+
+    if(computer == 1) cout << "Computer chooses Rock" << endl;
+    else if(computer == 2) cout << "Computer chooses Paper" << endl;
+    else cout << "Computer chooses Scissor" << endl;
+
+    if(user == computer) cout << "Match Tie" << endl;
+    else if((user == 1 && computer == 3) || 
+            (user == 2 && computer == 1) || 
+            (user == 3 && computer == 2))
+        cout << "You win!" << endl;
+    else
+        cout << "You lose!" << endl;
+
+    return 0;
+}
+```
+
+---
+
+### 🧩 How It Works
+
+1. The program displays 3 choices:
+
+   * `1` → Rock
+   * `2` → Paper
+   * `3` → Scissor
+2. You enter your choice.
+3. The computer randomly picks one using `rand()`.
+4. The program compares both and prints the result.
+
+---
+
+### ⚙️ How to Run
+
+1. Save the code as `stone_paper_scissor.cpp`.
+2. Open a terminal or command prompt in that folder.
+3. Compile and run using:
+
    ```bash
    g++ stone_paper_scissor.cpp -o game
-   ```
-
-2. **Run the program:**
-   ```bash
    ./game
    ```
+4. Play and enjoy! 🎮
 
-## Instructions
-1. When you run the program, you will see the following options:
-   ```
-   Stone Paper Scissor Game
-   1) Rock
-   2) Paper
-   3) Scissor
-   ```
-2. Input a number between 1 to 3 to choose your option:
-   - `1`: Rock
-   - `2`: Paper
-   - `3`: Scissors
+---
 
-3. The program will display both your choice and the computer’s choice, then declare the result as one of the following:
-   - **You win!**: You have defeated the computer.
-   - **You lose!**: The computer has defeated you.
-   - **Match Tie**: Both you and the computer chose the same option, resulting in a tie.
+### 🧠 Concepts Used
 
-## Code Explanation
+* Random number generation (`rand()`, `srand()`, `time(NULL)`)
+* Conditional statements (`if`, `else if`)
+* Basic I/O with `cin` and `cout`
 
-1. **Random Number Generation:**
-   - The `srand(time(NULL))` function seeds the random number generator with the current time to ensure different random values every time the program runs.
-   - The computer’s choice is generated using `rand()%3+1`, which produces a random integer between 1 and 3.
+---
 
-2. **User Input:**
-   - The user inputs a number (`1`, `2`, or `3`) to choose Rock, Paper, or Scissors.
-
-3. **Game Logic:**
-   - The program first checks if the user and computer chose the same option, resulting in a tie.
-   - Then, based on the user’s choice, it compares against the computer’s choice to determine the winner.
-
-## Example Run
-
-```
-Stone Paper Scissor Game
-1) Rock
-2) Paper
-3) Scissor
-2
-You choose Paper
-Computer chooses Rock
-You win!
-```
-
-## Notes
-- The code uses `if` statements to compare choices and determine the outcome of each round.
-- The game ends after one round, but it can be easily extended to multiple rounds by using a loop structure.
-
-## License
-This project is open-source and free to use.
+Would you like me to make it **loop automatically** so you can play multiple rounds without restarting the program?
